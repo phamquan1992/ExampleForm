@@ -1,0 +1,14 @@
+<!-- <app-iptem (model)="change_value($event)"></app-iptem> <br>
+<app-iptem (model)="change_value($event)"></app-iptem><br> -->
+
+<form (ngSubmit)="PreviewData()" [formGroup]="DataForm">
+    <div *ngFor="let it of array_num">
+        <app-iptem [data]="ten_input+it" [form]="DataForm"></app-iptem><br>
+    </div>
+    <button (click)="add_input()">Add</button>
+    <button type="submit">Click</button>
+</form>
+
+<span>{{payLoad}}</span>
+<angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlText" [config]="config"></angular-editor>
+<router-outlet></router-outlet>
